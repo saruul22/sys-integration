@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integration</title>
+    <title>Google Sign-In with Google Cloud</title>
+    <!-- Load the Google API library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Include the jwt-decode library to decode the ID token -->
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/sys-integration.js"></script>
 </head>
-<body>
-    
-</body>
+<body onload="initializeGoogleSignIn()">
+    <header class="header">
+        <p>
+            <strong>Weather in Ulaanbaatar:</strong> 
+            <span class="weather-info">
+                <span id="header-temperature">-</span>°C, 
+                <span id="header-description">-</span>
+            </span>
+        </p>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to Google Cloud Auth</h1>
+        <div id="google-signin-btn"></div>
+        <div id="user-card" class="user-card hidden">
+            <img id="user-picture" class="user-picture" src="" alt="User Picture">
+            <div class="user-info">
+                <p><strong>Name:</strong> <span id="user-name"></span></p>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+            </div>
+        </div>
+    </div>
 </html>
